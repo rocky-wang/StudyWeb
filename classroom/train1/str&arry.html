@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串与数组</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/train.css">
+    <script>
+        var str1 = "hello";
+        var arr1 = [1,2,3];
+        var str2 = "中国";
+
+        var a1 = Array.prototype.join.call(str1,' ');
+        var a2 = arr1.join('');
+
+//        console.log(typeof a1);
+        console.log(escape(str2));
+        console.log(encodeURI(str2));
+        console.log(encodeURIComponent(str2));
+        console.log(arr1.toString());
+    </script>
+</head>
+<body>
+<div class="content">
+    <h3>字符串和数组的注意点</h3>
+    <p>都可以通过[]进行内容索引操作，但是本质上还是不同。</p>
+    <p>字符串是不可以改变的，所以如果想用数组里的方法对字符串使用，必须保证数组方法是不会改变原来数组对象的才可以使用。比如join函数，是数组生成字符串的方法，他是新返回一个字符串，对原始数组不起作用。</p>
+    <h3>类数组对象和数组对象</h3>
+    <p>有些对象，也定义了1，2，3这些Key值，同时也定义了length属性，但是他仍然是普通对象，不是Array。比如arguments，DOM元素集，字符串这些。</p>
+    <pre>
+        function abc() {
+            console.log(arguments.length);
+            console.log(arguments.length instanceof Array);
+        }
+    </pre>
+    <p>这个时候，建议使用slice函数将这些类数组对象变为真正的数组对象。</p>
+    <p>数组也支持in的操作，来判断数组是否包含某个下标，即这个下标对应的内容是否存在。</p>
+    <p>数组的遍历方法，foreach或者单纯的for循环，不推荐for-in方法，容易遍历到数组对象的非数字标识。</p>
+    <h3>数组的常用方法</h3>
+    <p style="color:red;">1、【slice】：</p>
+    <p style="text-indent: 4em;">得到一个新的数组，不会修改原数组内容，一般把他作为获取一部分数组内容或者复制一个数组的方法。</p>
+    <p style="color:red;">2、【foreach】：</p>
+    <p style="text-indent: 4em;">遍历数组，每得到一个数组内容，调用注册的回调函数，参数顺序ele元素,index下标,array原数组内容。</p>
+
+</div>
+</body>
+</html>

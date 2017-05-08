@@ -1,0 +1,39 @@
+.content{
+    padding: 50px;
+    margin: 50px 100px;
+    font-family: 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, 'Hiragino Sans GB', 微软雅黑, 'WenQuanYi Micro Hei', STHeiti, SimSun, sans-serif;
+    color: #333;
+    font-size: 14px;
+    width: 500px;
+    border: 1px dashed goldenrod;
+}
+
+.content h3{
+    font-size: 26px;
+    color: #1982d1;
+    line-height: 33px;
+    font-family: Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',sans-serif,Times;
+}
+
+.content p{
+    padding: 5px 0;
+    text-indent: 2em;
+    line-height: 1.8;
+}
+
+.content .tit-detail{
+    font-size: 22px;
+    padding: 5px 0 12px 0;
+    font-weight: bold;
+}
+
+.content pre{
+    margin-bottom: 30px;
+    padding: 16px 0;
+    border: 1px solid #e8e8e8;
+    background-color: #f4f4f4;
+    line-height: 1.45;
+    border-radius: 3px;
+    font: 14px Consolas,"Liberation Mono",Menlo,Courier,monospace;
+    color: #666;
+}

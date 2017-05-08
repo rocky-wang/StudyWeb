@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易计算器</title>
+    <script>
+        var aFnOps = [fnAddOps, fnSubOps,fnMultiOps,fnDivOps,fnJoinOps];
+
+        window.onload = function () {
+            var obtnResult = document.getElementById('btnResult');
+            var oResultText = document.getElementById('result');
+
+            if (obtnResult){
+                obtnResult.onclick = function () {
+                    var oNum1st = document.getElementById('num1st');
+                    var oNum2nd = document.getElementById('num2nd');
+                    var oType = document.getElementById('opType');
+
+                    var nType = Number(oType.value);
+                    oResultText.value = 0;
+
+                    nType = nType || 0;
+
+                    oResultText.value = aFnOps[nType](oNum1st.value,oNum2nd.value);
+                };
+            }
+        };
+
+        function fnAddOps() {
+            var result = 0;
+            var tmpNum;
+
+            for (var i = 0; i < arguments.length; i++){
+                tmpNum =  Number(arguments[i]);
+                if ( tmpNum ){
+                    result += tmpNum;
+                }
+            }
+
+            return result;
+        }
+
+        function fnSubOps() {
+            console.log('this is a subs!');
+        }
+
+        function fnMultiOps() {
+            console.log('this is a multiple!');
+        }
+
+        function fnDivOps() {
+            console.log('this is a division!');
+        }
+
+        function fnJoinOps() {
+            console.log('this is a string-Join!');
+        }
+    </script>
+</head>
+<body>
+<label for="num1st">简易计算器</label>
+<input type="text" id="num1st">
+<select id="opType">
+    <option value="add">加法</option>
+    <option value="1">减法</option>
+    <option value="2">乘法</option>
+    <option value="3">除法</option>
+    <option value="4">字符相连</option>
+</select>
+<input type="text" id="num2nd">
+<input type="button" value="计算" id="btnResult">
+<br>
+<label for="result">结果是：</label>
+<input type="text" id="result">
+</body>
+</html>
