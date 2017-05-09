@@ -26,3 +26,10 @@ function getType(o) {
 function getRandCode() {
     return Math.random()*Math.pow(36,4) << 0;
 }
+
+/**
+ * @description 返回重复几次的字符串
+ * */
+function repeatString(str,n) {
+    return new Array(n + 1).join(str);
+}

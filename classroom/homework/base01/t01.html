@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <title>第一题</title>
     <script>
+        // 内嵌JS
         alert("欢迎学习JavaScript课程");
     </script>
-    <script src="">
-        var headContent = "今日事今日毕";
-        document.write("<h1>"+headContent+"</h1>");
-        function btnHandler() {
-            alert("签到成功");
-            window.open("http://www.maiziedu.com");
-        }
-    </script>
+    <!--外联JS调用方式，思考这句话放到</body>标签后的现象-->
+    <script src="t01.js"></script>
 </head>
 <body>
-<input type="button" value="我要签到" onclick="btnHandler()">
+<!--html元素内嵌JS代码引入-->
+<input type="button" value="我要签到" onclick="javascript:alert('签到成功');window.open('http://www.maiziedu.com');">
 </body>
 </html>

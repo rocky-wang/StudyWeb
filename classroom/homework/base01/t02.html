@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的使用demo</title>
+    <style>
+        span{
+            padding: 0 20px;
+        }
+    </style>
+    <script>
+        function showStockInfo(stockType, stockID, stockName) {
+            document.write("<div>" + stockType + "<span>"+ stockID + "</span>" + "<span>" + stockName + "</span>" + "</div>");
+        }
+
+        var strStockType = "中国股票";
+        var strStockID = "000001";
+        var strStockName = "上证指数";
+        showStockInfo(strStockType,strStockID,strStockName);
+
+        strStockID = "600001";
+        strStockName = "包钢股份";
+        showStockInfo(strStockType,strStockID,strStockName);
+
+        strStockType = "我的股票";
+        strStockID = "000001";
+        strStockName = "上证指数";
+        showStockInfo(strStockType,strStockID,strStockName);
+
+        strStockID = "600001";
+        strStockName = "包钢股份";
+        showStockInfo(strStockType,strStockID,strStockName);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
