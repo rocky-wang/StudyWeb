@@ -9,10 +9,11 @@
         }
     </style>
     <script>
+        // 如果不用函数，代码会有很多重复编写
         function showStockInfo(stockType, stockID, stockName) {
             document.write("<div>" + stockType + "<span>"+ stockID + "</span>" + "<span>" + stockName + "</span>" + "</div>");
         }
-
+        // 思考如何优化后面代码结构，利用后面学习的JS数据结构思维
         var strStockType = "中国股票";
         var strStockID = "000001";
         var strStockName = "上证指数";

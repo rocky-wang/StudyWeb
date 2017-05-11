@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>猜罪犯</title>
+    <script>
+        function guessKiller() {
+            var arrPerson = ["A","B","C","D"];
+            var killer;
+            console.log(this);
+            for (var i = 0; i < arrPerson.length; i++){
+                killer = arrPerson[i];
+
+                var a1 = killer === "B" || killer === "C" || killer === "D";
+                var a2 = killer === "C";
+                var a3 = killer === "A" || killer === "D";
+                var a4 = killer === "C";
+
+                if ( a1 + a2 + a3 + a4 === 2){
+                    return killer;
+                }
+            }
+
+            return "Not Found!";
+        }
+
+        console.log(guessKiller());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

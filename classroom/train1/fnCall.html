@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>函数对象调用模型</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/train.css">
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="content">
+    <h3>函数内置方法调用</h3>
+    <p>只要知道函数的名称，就可以通过函数对象内置的call或者apply方法进行调用。</p>
+    <p>所以这样来看，我们也可以在构造方法的protype中取到对应函数的名称，然后利用call或者apply方法进行其他对象的调用，比如字符串类型调用数组原型的方法。</p>
+    <pre>
+        function abc() {
+            console.log(this.x);
+        }
+        var obj1 = {
+            x : 10
+        };
+        abc.call(obj1);
+    </pre>
+    <h3>类数组与数组操作介绍</h3>
+    <p>有些对象，具备0，1，2这样的下标，而且也有length的属性，那么就可以调用Array的类方法。</p>
+    <pre>
+        function abc() {
+            console.log(Array.prototype.join.call(arguments,"-"));
+        }
+        abc(1,2,3);
+    </pre>
+</div>
+</body>
+</html>
