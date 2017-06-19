@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Js数据类型</title>
+    <script>
+        // 思考为什么1<<24位的目的，查找number类型的toString和substring的函数功能
+        function rgb2Hex(r, g, b) {
+            return "#" + ((1<<24) | (r<<16) | (g<<8) | b )
+                    .toString(16)
+                    .substring(1);
+        }
+        var strWhiteColor = {red: 255, green: 255, blue:255};
+        console.log("white color is :" +
+            rgb2Hex(strWhiteColor.red, strWhiteColor.green, strWhiteColor.blue));
+
+        var strInfo = "/*********\nI'm student\n*********/";
+        console.log(strInfo);
+
+    </script>
+</head>
+<body style="color:white;">
+
+</body>
+</html>

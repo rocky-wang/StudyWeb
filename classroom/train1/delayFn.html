@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>获取异步函数的返回值</title>
+    <script>
+        function getSth(cb) {
+            var vr = 0;
+            setTimeout(function () {
+                vr = 100;
+                cb(vr);
+            }, 100);
+            return vr;
+        }
+        
+        function compute(x) {
+            console.log(x);
+        }
+
+        getSth(compute);
+        ['log','info'].forEach(function (method) {
+            console[method] = console[method].bind(console,
+                new Date().toString());
+        });
+        console.log("hello world");
+    </script>
+</head>
+<body>
+<h1 abc = "111"></h1>
+</body>
+</html>

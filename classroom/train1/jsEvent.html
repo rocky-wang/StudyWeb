@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Js事件机制</title>
+    <style>
+        #parid{
+            border: 1px solid #000;
+            width: 300px;
+            height: 300px;
+        }
+
+        #chid{
+            border: 1px solid red;
+            width: 150px;
+            height: 50px;
+            margin: 10px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button"  onclick="b1(event)" id="btn1" value="but">
+
+<div class="par" id="parid">
+    <div class="children" id="chid">我是子元素</div>
+</div>
+
+<ul id="news">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+</ul>
+
+<script>
+    var oBtn1 = document.getElementById('btn1');
+
+    var oPar1 = document.getElementById('parid');
+    var oChid = document.getElementById('chid');
+    var oNews = document.getElementById('news');
+
+    oNews.addEventListener('click', function (ev) {
+        console.log("++++++");
+        ev.target.style.color = "red";
+    });
+
+    oPar1.addEventListener('click',function (ev) {
+        console.log("par+++++++++");
+        ev.stopPropagation();
+    }, false);
+
+
+    oChid.addEventListener('click', function (ev) {
+        console.log("child........");
+//        ev.stopPropagation();
+    }, false);
+
+    function b1(ev) { console.dir(ev) }
+//    oBtn1.onclick = b1;
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象</title>
+    <script>
+        function Abc(n, a) {
+            this._name = n;
+            this.age = a;
+
+        }
+
+        Abc.prototype.hello = function () {
+            console.log("---------");
+        };
+
+        Array.prototype.myset = function () {
+
+        };
+
+
+        a1 =  new Abc('Jim', 20);
+        a2 =  new Abc('Lim', 21);
+        a1.hello = function () {
+
+        };
+        console.log(a1.hello === a2.hello);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

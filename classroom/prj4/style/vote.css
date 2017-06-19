@@ -1,0 +1,24 @@
+.voteMain {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    font-size: 12px;
+    line-height: 16px;
+    height: 16px;
+    width: 300px;
+}
+
+.voteMain span{
+
+}
+
+#voteStar {
+    font-size: 0;
+}
+
+#voteStar a{
+    font-size: 14px;
+    line-height: 14px;
+    width: 14px;
+    display: inline-block;
+}

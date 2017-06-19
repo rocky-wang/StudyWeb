@@ -23,8 +23,28 @@
 
             return "Not Found!";
         }
+        function primeCheck(num) {
+            if ( !isNaN(Number(num)) && num < 2){
+                return false;
+            }
+            for (var i = 2; i < num; i++){
+                if (num % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
 
         console.log(guessKiller());
+        var result = [];
+
+        // 0-200以内的素数
+        for (var num = 0; num < 200; num++){
+            if (primeCheck(num))
+                result.push(num);
+        }
+        console.log(result.toString());
+        console.log(result.length);
     </script>
 </head>
 <body>
