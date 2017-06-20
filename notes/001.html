@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery代码分析</title>
+    <script src="../public/jquery-2.0.3.js"></script>
+    <script>
+        // 函数自执行的好处：
+        // 1、在jquery库中，为了防止全局变量污染，同时让jquery代码里的变量名只为自己服务，包括变量名和函数名
+        // 2、为了对外引出接口，可以使用window.xx的赋值，让xx内容全局可见
+        (function () {
+            var b1 = 'hello';
+            function $() {
+                alert(b1);
+            }
+            window.a = $;   // 公布对外接口
+        })();
+        // alert(b1);   // 无法访问函数内变量，保护私有成员
+        a();
+    </script>
+    <script>
+        fn1 = function () { alert(1); };
+        fn2 = function () { alert(2); };
+        var cb = $.Callbacks();
+        cb.add(fn1);
+        cb.add(fn2);
+        cb.fire();
+    </script>
+    <script>
+        var dfd = $.Deferred();
+
+        setTimeout(function () {
+            alert(1);
+            dfd.resolve()
+        }, 1000);
+
+        dfd.done(function () {
+            alert(2);
+        })
+    </script>
+</head>
+<body>
+<p>
+    (21, 94) : 定义了一些变量和函数，最重要的是jQuery = function(){}
+</p>
+<p>
+    (96, 283): 给jQuery对象添加原型方法
+</p>
+<p>
+    (285, 347): extend: JQ的继承方法
+</p>
+<p>
+    (349, 817): jQuery.extend() : 扩展一些工具方法
+</p>
+<p>
+    (877, 2856): Sizzle方法，复杂选择器的实现
+</p>
+<p>
+    (2880, 3042): Callbacks: 回调对象，对函数的统一管理。
+</p>
+<p>
+    (3043, 3183): Deferred: 延迟对象：对异步的统一管理，ajax等
+</p>
+<p>
+    (3184, 3295): support：功能检测
+</p>
+<p>
+    (3308, 3652): data(): 数据缓存
+</p>
+<p>
+    (3653, 3797): queue() : 队列 dequeue() 队列管理，比如动画的管理
+</p>
+<p>
+</p>
+<p>
+    (3803, 4299): attr() prop() val() addClass() 对元素属性的操作
+</p>
+<p>
+    (4300, 5128): on() trigger() : 事件操作的相关方法
+</p>
+<p>
+    (5140, 6057): DOM操作： 添加 删除 获取 包装 DOM筛选
+</p>
+<p>
+    (6058, 6620): css() : 样式的操作
+</p>
+<p>
+    (6621, 7854): 提交的数据和ajax()操作 load() getJson()
+</p>
+<p>
+    (7855, 8584): animate() : 运动的方法
+</p>
+<p>
+    (8585, 8792): offset() scrollTop 位置与尺寸的方法
+</p>
+<p>
+
+</p>
+</body>
+</html>
